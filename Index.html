@@ -12,7 +12,8 @@
 
         <title>Pokecard Silhouette</title>
 
-        <link rel="stylesheet" href="layout.css">      
+        <link rel="stylesheet" href="layout.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
     </head>
 
     <body>
@@ -33,12 +34,25 @@
 				Metric <input type="radio" name="gender" value="other">
 	    	</div>
 	    </div>	   
-	    <div class="step" id="step2"><h4>Fill backdound</h4></div>
-	    <div class="step" id="step3"><h4>Silhouette</h4></div>
+	    <div class="step" id="step2"><h4>Fill backgound</h4>
+	    </div>
+	    <div class="step" id="step3"><h4>Cards</h4>
+	    	<div id="find">Find</div>
+	    </div>
+	    <div class="step" id="step3"><h4>Silhouette</h4>
+	    </div>
     </div>
     <canvas id="myCanvas" width="800" height="600" style="border:1px solid #d3d3d3;">
     Your browser does not support the HTML5 canvas tag.
     </canvas>
+
+
+    
+
+    <div id="findCardForm">
+    	<div id="searchCardInput">Name : <input id="cardName" type="Text" value="Mew"><i id="findButton" class="fas fa-search"></i> <i id="findCardClose" class="fas fa-times-circle"></i></div>
+    	<div id="findCards"></div>
+    </div>
 
 
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -47,7 +61,7 @@
     <script>
 		let storemask;
 
-    	function DoDraw(mask)
+    	function DoDraw(bg,mask)
     	{
 			var c=document.getElementById("myCanvas");
             c.width = 800;
@@ -56,57 +70,59 @@
             var ctx=c.getContext("2d");
             ctx.clearRect(0,0,c.width,c.height);
  
-            var img = new Image;                 
-            img.src = PokeSilhouette.DrawCardArray(document.getElementById("xHalfCard").checked,document.getElementById("yHalfCard").checked);
-            img.onload = function(){
-            	ctx.drawImage(mask, 0, 0, 500 , 442);
-            	ctx.globalCompositeOperation = 'source-in';
-            	ctx.drawImage(img, 0 , 0);
-            };
+            let img = PokeSilhouette.DrawSilhouette(mask,document.getElementById("xHalfCard").checked,document.getElementById("yHalfCard").checked);
+            ctx.drawImage(bg , 0 ,0 );
+            ctx.drawImage(img, 150 , 150);
     	}
 
     	document.getElementById("xHalfCard").onchange = function(){DoDraw(storemask)};
     	document.getElementById("yHalfCard").onchange = function(){DoDraw(storemask)};
 
+		document.getElementById("find").onclick = function(){document.getElementById("findCardForm").style.display = "block"};
+		document.getElementById("findButton").onclick = function(){PokeSilhouette.FindCards(document.getElementById("cardName").value)};
+
+		document.getElementById("findCardClose").onclick = function(){document.getElementById("findCardForm").style.display = "none"};
 
         window.onload = function() {
 
         	let cardsx = document.getElementById("cardsxPicker").value;
             let cardsy = document.getElementById("cardsyPicker").value;
 
-            
+            var bg = new Image;
+            bg.src = "https://motionarray.imgix.net/preview-72760-rLNwCGtel0_0014.jpg";
+            bg.onload = function(){
 
-            var mask = new Image; 
-            //mask.crossOrigin="anonymous"
-            
-            mask.src = "https://i.imgur.com/r2LyYV6.png";
+	            var mask = new Image; 
+	            //mask.crossOrigin="anonymous"
+	            
+	            mask.src = "https://i.imgur.com/r2LyYV6.png";
 
-            mask.onload = function(){
+	            mask.onload = function(){
 
-                var card = new Image; 
-                card.crossOrigin="anonymous"
-                card.src = "https://images.pokemontcg.io/xy12/101.png";
-                card.onload = function(){
+	                var card = new Image; 
+	                card.crossOrigin="anonymous"
+	                card.src = "https://images.pokemontcg.io/xy12/101.png";
+	                card.onload = function(){
 
-		            let carray = [];
-		        	for(let y = 0; y < cardsy; y++)
-		            {
-		            	let row = [];
+			            let carray = [];
+			        	for(let y = 0; y < cardsy; y++)
+			            {
+			            	let row = [];
 
-		                for(let x = 0; x < cardsx; x++)
-							row.push(card);
-		                
-		                carray.push(row);
-		            }
+			                for(let x = 0; x < cardsx; x++)
+								row.push(card);
+			                
+			                carray.push(row);
+			            }
 
-		            PokeSilhouette.cardArray = carray;
+			            PokeSilhouette.cardArray = carray;
 
-                	storemask = mask;
+	                	storemask = mask;
 
-                	DoDraw(mask);
-                };
-            };
-
+	                	DoDraw(bg,mask);
+	                };
+	            };
+	        };
         };
 
        // PokeSilhouette.GenBackGround('charizard');

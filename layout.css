@@ -9,3 +9,35 @@
 .stepNum{
 	float: left;
 }
+
+
+#findCardForm{
+	display: none;
+	width: 90%;
+	background-color: #89cff0;
+	position: absolute; 
+	top: 50px;
+	left: 5%;
+	padding: 10px;
+	border-radius: 7px;
+}
+
+#searchCardInput{
+	width: 100%;
+}
+
+#findButton{
+	margin-left: 5px;
+}
+
+#findCardClose{
+	float: right;
+
+}
+
+#findCards {
+
+}
+#findCards img {
+	margin: 2px;
+}

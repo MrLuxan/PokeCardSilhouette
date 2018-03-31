@@ -1,6 +1,6 @@
 # PokeCardSilhouette
 
-Project for reddit to help with current silhouette pictures with poekmon cards.
+Project for reddit to help with current silhouette pictures with poekmon cards craze.
 
 E.g. 
 ![alt text](https://i.imgur.com/y28Z2Nk.jpg "Logo Title Text 1")

@@ -34,7 +34,7 @@
 				Metric <input type="radio" name="gender" value="other">
 	    	</div>
 	    </div>	   
-	    <div class="step" id="step2"><h4>Fill backgound</h4>
+	    <div class="step" id="step2"><h4>Backgound</h4>
 	    </div>
 	    <div class="step" id="step3"><h4>Cards</h4>
 	    	<div id="find">Find</div>
@@ -42,7 +42,7 @@
 	    <div class="step" id="step3"><h4>Silhouette</h4>
 	    </div>
     </div>
-    <canvas id="myCanvas" width="800" height="600" style="border:1px solid #d3d3d3;">
+    <canvas id="SilhouetteCanvas" width="800" height="600" style="border:1px solid #d3d3d3;">
     Your browser does not support the HTML5 canvas tag.
     </canvas>
 
@@ -63,7 +63,7 @@
 
     	function DoDraw(bg,mask)
     	{
-			var c=document.getElementById("myCanvas");
+			var c=document.getElementById("SilhouetteCanvas");
             c.width = 800;
 			c.height = 800;
 

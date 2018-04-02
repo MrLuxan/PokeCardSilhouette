@@ -26,22 +26,49 @@
 	width: 100%;
 }
 
-#findButton{
-	margin-left: 5px;
-}
-
 #findCardClose{
 	float: right;
 
 }
 
 #findCards {
-
+	clear: both;
 }
+
 #findCards img {
 	margin: 2px;
+	cursor: pointer;
 }
 
 #silhouetteCanvas{
 	margin-left: 10px;
+}
+
+.buttonedTextBox{
+	width: max-content;
+	line-height: 21px;
+}
+
+.buttonedTextBox div{
+	float: right;
+	background-color: #babdb2;
+	border-radius: 0px 5px 5px 0px;
+	margin-left: 5px;	
+	line-height: 20px;
+}
+
+.buttonedTextBox i{
+	vertical-align: text-bottom;
+    padding: 0 2px;
+    color: #404040;
+}
+
+#searchCardInput .buttonedTextBox{
+	float: left;
+}
+
+
+.sideCard{
+	width: 40px;
+	cursor: pointer;;
 }

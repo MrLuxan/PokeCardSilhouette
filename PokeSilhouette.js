@@ -17,6 +17,7 @@ var PokeSilhouette = (function() {
   let applyYOffset = function(){return document.getElementById("yHalfCard").checked};
   let cardImageOutput = function(){return document.getElementById("findCards");};
   let showForground = function(){return document.getElementById("showForeground").checked};
+  let showSilhouette = function(){return document.getElementById("showSilhouette").checked};
 
 	function GetCardData(cardName,callBack)
   {
@@ -58,10 +59,14 @@ var PokeSilhouette = (function() {
     let ctx=c.getContext("2d");
     ctx.clearRect(0,0,c.width,c.height);
  
-    let img = PokeSilhouette.DrawCardArray();
-    ctx.drawImage(library.maskData.image, 0, 0, 600 , 530);
-    ctx.globalCompositeOperation = 'source-in';
-    ctx.drawImage(img, 0 , 0);
+    let cards = PokeSilhouette.DrawCardArray();
+
+    if(showSilhouette())
+    {
+      ctx.drawImage(library.maskData.image, 0, 0, 600 , 530);
+      ctx.globalCompositeOperation = 'source-in';
+    }
+    ctx.drawImage(cards, 0 , 0);
 
     return c;
   }
@@ -84,7 +89,6 @@ var PokeSilhouette = (function() {
 
     return c;
   }
-
 
 	library.FindCards = function(cardName)
   {

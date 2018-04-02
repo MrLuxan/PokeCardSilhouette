@@ -3,99 +3,98 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="icon" href="icon.png">
 
-        <title>Pokecard Silhouette</title>
+        <title>PokeCard Silhouette</title>
+        <link rel="icon" href="icon.png">
 
         <link rel="stylesheet" href="layout.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
     </head>
 
     <body>
+    <img id="logo" src="logo.png">
+    <div id = "main">
+	    <div id="menu">
+		    <div class="step" id="step1">
+		    	<h4>Dimensions</h4>
+		    	<div>
+			    	Width <input id="cardsxPicker" type="number" value="5" min="1" max="5"> 
+			    	Height <input id="cardsyPicker" type="number" value="4" min="1" max="5">
+		    	</div>
+		    	<div>
+		    	    X Half card off set <input id="xHalfCard" type="checkbox"><br>
+			    	Y Half card off set <input id="yHalfCard" type="checkbox">
+		    	</div>
+		    	<!--<div>
+					Imperial <input type="radio" value="other"> 
+					Metric <input type="radio" value="other">
+		    	</div>-->
+		    </div>	   
+		    <div class="step" id="step3"><h4>Background card</h4>
 
-    <div id="menu">
-	    <div class="step" id="step1">
-	    	<h4>Dimensions</h4>
-	    	<div>
-		    	Width <input id="cardsxPicker" type="number" value="5" min="1" max="5"> 
-		    	Height <input id="cardsyPicker" type="number" value="4" min="1" max="5">
-	    	</div>
-	    	<div>
-	    	    X Half card off set <input id="xHalfCard" type="checkbox"><br>
-		    	Y Half card off set <input id="yHalfCard" type="checkbox">
-	    	</div>
-	    	<!--<div>
-				Imperial <input type="radio" value="other"> 
-				Metric <input type="radio" value="other">
-	    	</div>-->
-	    </div>	   
-	    <div class="step" id="step3"><h4>Background cards</h4>
-
-	    	<img id="currentCardBarckground" class="sideCard" src="graycardpack.png">	   
+		    	<img id="currentCardBarckground" class="sideCard" src="graycardpack.png">	   
+		    </div>
+		    <div class="step" id="step3"><h4>Cards</h4>
+		    	<img data-row="0" data-col="0" class="mainCard sideCard" src="graycardpack.png">
+		    	<img data-row="0" data-col="1" class="mainCard sideCard" src="graycardpack.png">
+		    	<img data-row="0" data-col="2" class="mainCard sideCard" src="graycardpack.png">
+		    	<img data-row="0" data-col="3" class="mainCard sideCard" src="graycardpack.png">
+		    	<img data-row="0" data-col="4" class="mainCard sideCard" src="graycardpack.png">
+		    	<br>
+		    	<img data-row="1" data-col="0" class="mainCard sideCard" src="graycardpack.png">
+		    	<img data-row="1" data-col="1" class="mainCard sideCard" src="graycardpack.png">
+		    	<img data-row="1" data-col="2" class="mainCard sideCard" src="graycardpack.png">
+		    	<img data-row="1" data-col="3" class="mainCard sideCard" src="graycardpack.png">
+		    	<img data-row="1" data-col="4" class="mainCard sideCard" src="graycardpack.png">
+		    	<br>
+		    	<img data-row="2" data-col="0" class="mainCard sideCard" src="graycardpack.png">
+		    	<img data-row="2" data-col="1" class="mainCard sideCard" src="graycardpack.png">
+		    	<img data-row="2" data-col="2" class="mainCard sideCard" src="graycardpack.png">
+		    	<img data-row="2" data-col="3" class="mainCard sideCard" src="graycardpack.png">
+		    	<img data-row="2" data-col="4" class="mainCard sideCard" src="graycardpack.png">
+		    	<br>
+		    	<img data-row="3" data-col="0" class="mainCard sideCard" src="graycardpack.png">
+		    	<img data-row="3" data-col="1" class="mainCard sideCard" src="graycardpack.png">
+		    	<img data-row="3" data-col="2" class="mainCard sideCard" src="graycardpack.png">
+		    	<img data-row="3" data-col="3" class="mainCard sideCard" src="graycardpack.png">
+		    	<img data-row="3" data-col="4" class="mainCard sideCard" src="graycardpack.png">
+		    	<br>	    	
+		    	<img data-row="4" data-col="0" class="mainCard sideCard" src="graycardpack.png">
+		    	<img data-row="4" data-col="1" class="mainCard sideCard" src="graycardpack.png">
+		    	<img data-row="4" data-col="2" class="mainCard sideCard" src="graycardpack.png">
+		    	<img data-row="4" data-col="3" class="mainCard sideCard" src="graycardpack.png">
+		    	<img data-row="4" data-col="4" class="mainCard sideCard" src="graycardpack.png">
+		    	<br>	    		    	
+		    </div>
+		    <div class="step" id="step3"><h4>Silhouette</h4>
+		    	<div class="buttonedTextBox">Url: <div><input id="SilhouetteUrlTextBox" type="Text"><i id="setSilhouetteButton" class="fas fa-angle-double-right"></i></div></div>
+		    	<img id="currentSilhouette" src="">
+		    	Show <input id="showSilhouette" type="checkbox" checked>
+		    	<br><img class="previewImage" id="silhouettePreview">
+		    </div>
+		    <div class="step" id="step2"><h4>Foreground</h4>	    	
+		    	<div class="buttonedTextBox">Url: <div><input id="bgUrlTextBox" type="Text"><i id="setBgButton" class="fas fa-angle-double-right"></i></div></div>
+		    	<img id="currentForeground" src="">
+		    	Show <input id="showForeground" type="checkbox" checked>
+		    	<br><img class="previewImage" id="foregroundPreview">
+		    </div>	    
 	    </div>
-	    <div class="step" id="step3"><h4>Cards</h4>
-	    	<img data-row="0" data-col="0" class="mainCard sideCard" src="graycardpack.png">
-	    	<img data-row="0" data-col="1" class="mainCard sideCard" src="graycardpack.png">
-	    	<img data-row="0" data-col="2" class="mainCard sideCard" src="graycardpack.png">
-	    	<img data-row="0" data-col="3" class="mainCard sideCard" src="graycardpack.png">
-	    	<img data-row="0" data-col="4" class="mainCard sideCard" src="graycardpack.png">
-	    	<br>
-	    	<img data-row="1" data-col="0" class="mainCard sideCard" src="graycardpack.png">
-	    	<img data-row="1" data-col="1" class="mainCard sideCard" src="graycardpack.png">
-	    	<img data-row="1" data-col="2" class="mainCard sideCard" src="graycardpack.png">
-	    	<img data-row="1" data-col="3" class="mainCard sideCard" src="graycardpack.png">
-	    	<img data-row="1" data-col="4" class="mainCard sideCard" src="graycardpack.png">
-	    	<br>
-	    	<img data-row="2" data-col="0" class="mainCard sideCard" src="graycardpack.png">
-	    	<img data-row="2" data-col="1" class="mainCard sideCard" src="graycardpack.png">
-	    	<img data-row="2" data-col="2" class="mainCard sideCard" src="graycardpack.png">
-	    	<img data-row="2" data-col="3" class="mainCard sideCard" src="graycardpack.png">
-	    	<img data-row="2" data-col="4" class="mainCard sideCard" src="graycardpack.png">
-	    	<br>
-	    	<img data-row="3" data-col="0" class="mainCard sideCard" src="graycardpack.png">
-	    	<img data-row="3" data-col="1" class="mainCard sideCard" src="graycardpack.png">
-	    	<img data-row="3" data-col="2" class="mainCard sideCard" src="graycardpack.png">
-	    	<img data-row="3" data-col="3" class="mainCard sideCard" src="graycardpack.png">
-	    	<img data-row="3" data-col="4" class="mainCard sideCard" src="graycardpack.png">
-	    	<br>	    	
-	    	<img data-row="4" data-col="0" class="mainCard sideCard" src="graycardpack.png">
-	    	<img data-row="4" data-col="1" class="mainCard sideCard" src="graycardpack.png">
-	    	<img data-row="4" data-col="2" class="mainCard sideCard" src="graycardpack.png">
-	    	<img data-row="4" data-col="3" class="mainCard sideCard" src="graycardpack.png">
-	    	<img data-row="4" data-col="4" class="mainCard sideCard" src="graycardpack.png">
-	    	<br>	    		    	
-	    </div>
-	    <div class="step" id="step3"><h4>Silhouette</h4>
-	    	<div class="buttonedTextBox">Url: <div><input id="SilhouetteUrlTextBox" type="Text"><i id="setSilhouetteButton" class="fas fa-angle-double-right"></i></div></div>
-	    	<img id="currentSilhouette" src="">
-	    	Show <input id="showSilhouette" type="checkbox">
-	    </div>
-	    <div class="step" id="step2"><h4>Foreground</h4>	    	
-	    	<div class="buttonedTextBox">Url: <div><input id="bgUrlTextBox" type="Text"><i id="setBgButton" class="fas fa-angle-double-right"></i></div></div>
-	    	<img id="currentForeground" src="">
-	    	Show <input id="showForeground" type="checkbox" checked>
-	    </div>	    
-    </div>
-    <canvas id="silhouetteCanvas" width="800" height="800" style="border:1px solid #d3d3d3;">
-    Your browser does not support the HTML5 canvas tag.
-    </canvas>
+	    <canvas id="silhouetteCanvas" width="800" height="800" style="border:1px solid #d3d3d3;">
+	    Your browser does not support the HTML5 canvas tag.
+	    </canvas>
+	</div>
 
     <div id="findCardForm">
     	<div id="searchCardInput">
-    		<div class="buttonedTextBox">Name: <div><input id="cardName" type="Text"><i id="findButton" class="fas fa-search"></i></div></div>
+    		<div class="buttonedTextBox">Name: <div><input id="cardName" type="Text" value="mew"><i id="findButton" class="fas fa-search"></i></div></div>
     		<i id="findCardClose" class="fas fa-times-circle"></i></div>
     	<div id="findCards"></div>
     </div>
 
 
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="PokeSilhouette.js"></script>   
-
     <script>
+
     	function DoDraw()
     	{
 			let c = document.getElementById("silhouetteCanvas");
@@ -109,29 +108,12 @@
     		document.getElementById("findCardForm").style.display = (show ? "block" : "none");
     	}
 
-    	document.getElementById("xHalfCard").onchange = function(){DoDraw()};
-    	document.getElementById("yHalfCard").onchange = function(){DoDraw()};
-    	document.getElementById("showForeground").onchange = function(){DoDraw()};
-
-
-		document.getElementById("currentCardBarckground").onclick = function()
-		{
-			PokeSilhouette.SelectionCallBack = function(cardData) {
-				DisplayFindForm(false);
-				SetArray(cardData.image);
-
-				document.getElementById("currentCardBarckground").src = cardData.image.src;
-				DoDraw();
-			}
-			DisplayFindForm(true);
-		}
-
 		function set1Card(sender)
 		{
-			console.log(sender);
 			let row = sender.dataset.row;
 			let col = sender.dataset.col;
 			PokeSilhouette.SelectionCallBack = function(cardData) {
+				console.log(cardData);
 				DisplayFindForm(false);
 				PokeSilhouette.cardArray[row][col] = cardData.image;
 				sender.src = cardData.image.src;
@@ -139,62 +121,6 @@
 			}
 			DisplayFindForm(true);
 		}
-
-		var classname = document.getElementsByClassName("mainCard");
-		for (var i = 0; i < classname.length; i++) {
-			
-		    classname[i].onclick = function(){set1Card(this);};
-		}
-
-
-/* set 1;
-		document.getElementById("currentCardBarckground").onclick = function()
-		{
-			let row = 1;
-			let col = 2;
-			PokeSilhouette.SelectionCallBack = function(cardData) {
-				console.log("card");
-				console.log(cardData);
-				DisplayFindForm(false);
-				PokeSilhouette.cardArray[row][col] = cardData.image;
-				document.getElementById("currentCardBarckground").src = cardData.image.src;
-				DoDraw();
-			}
-			DisplayFindForm(true);
-		};
-*/
-
-
-
-		document.getElementById("findButton").onclick = function(){PokeSilhouette.FindCards(document.getElementById("cardName").value)};
-
-		document.getElementById("findCardClose").onclick = function(){DisplayFindForm(false);};
-
-
-		document.getElementById("setBgButton").onclick = function()
-		{
-
-			var newBg = new Image;
-			newBg.src = document.getElementById("bgUrlTextBox").value;
-			newBg.onload = function(){
-				PokeSilhouette.backgroundData.image = newBg;
-				DoDraw();
-			};
-
-		};
-
-		document.getElementById("setSilhouetteButton").onclick = function()
-		{
-
-			var newSilhouette = new Image;
-			newSilhouette.src = document.getElementById("SilhouetteUrlTextBox").value;
-			newSilhouette.onload = function(){
-				PokeSilhouette.maskData.image = newSilhouette;
-				DoDraw();
-			};
-
-		};
-
 
 		function SetArray(card)
 		{
@@ -215,17 +141,62 @@
 	        PokeSilhouette.cardArray = carray;
 		}
 
-        window.onload = function() {
+    	document.getElementById("xHalfCard").onchange = function(){DoDraw()};
+    	document.getElementById("yHalfCard").onchange = function(){DoDraw()};
+    	document.getElementById("showForeground").onchange = function(){DoDraw()};
+		document.getElementById("showSilhouette").onchange = function(){DoDraw()};
+		document.getElementById("findButton").onclick = function(){PokeSilhouette.FindCards(document.getElementById("cardName").value)};
+		document.getElementById("findCardClose").onclick = function(){DisplayFindForm(false);};
 
+		document.getElementById("currentCardBarckground").onclick = function()
+		{
+			PokeSilhouette.SelectionCallBack = function(cardData) {				
+				DisplayFindForm(false);
+				SetArray(cardData.image);
 
+				document.getElementById("currentCardBarckground").src = cardData.image.src;
+				DoDraw();
+			}
+			DisplayFindForm(true);
+		}
 
-            var bg = new Image;
+		let classname = document.getElementsByClassName("mainCard");
+		for (let i = 0; i < classname.length; i++) 
+		{
+		    classname[i].onclick = function(){set1Card(this);};
+		}
+
+		document.getElementById("setBgButton").onclick = function()
+		{
+			let newBg = new Image;
+			newBg.src = document.getElementById("bgUrlTextBox").value;
+			newBg.onload = function(){				
+				document.getElementById("foregroundPreview").src = newBg.src;			
+				PokeSilhouette.backgroundData.image = newBg;
+				DoDraw();
+			};
+		};
+
+		document.getElementById("setSilhouetteButton").onclick = function()
+		{
+			let newSilhouette = new Image;
+			newSilhouette.src = document.getElementById("SilhouetteUrlTextBox").value;
+			newSilhouette.onload = function(){
+				document.getElementById("silhouettePreview").src = newSilhouette.src;
+				PokeSilhouette.maskData.image = newSilhouette;
+				DoDraw();
+			};
+		};
+
+        window.onload = function() 
+        {
+            let bg = new Image;
             bg.src = "https://motionarray.imgix.net/preview-72760-rLNwCGtel0_0014.jpg";
             bg.onload = function(){
 
             	PokeSilhouette.backgroundData.image = bg;
 
-	            var mask = new Image; 
+	            let mask = new Image; 
 	            //mask.crossOrigin="anonymous"	            
 	            mask.src = "https://i.imgur.com/r2LyYV6.png";
 
@@ -233,7 +204,7 @@
 
 	            	PokeSilhouette.maskData.image = mask;
 
-	                var card = new Image; 
+	                let card = new Image; 
 	                card.crossOrigin="anonymous"
 	                card.src = "https://images.pokemontcg.io/xy12/101.png";
 	                card.onload = function(){
@@ -245,7 +216,6 @@
 	        };
         };
 
-       // PokeSilhouette.GenBackGround('charizard');
     </script> 
     </body>
 </html>

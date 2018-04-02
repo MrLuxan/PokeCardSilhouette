@@ -1,5 +1,33 @@
+body {
+	background-image: url(bg.jpg);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h4 { 
+	margin: 5px 0;
+
+}
+
+#logo{
+	z-index: -1;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+}
+
+#main{
+	background-color: #0000005e;
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px #888261 solid;
+	width: fit-content;
+}
+
 #menu{
 	float: left;
+	color: aliceblue;
 }
 
 .step{
@@ -10,11 +38,15 @@
 	float: left;
 }
 
+.previewImage{
+	width: 100px;
+}
 
 #findCardForm{
+	color: aliceblue;
 	display: none;
 	width: 90%;
-	background-color: #89cff0;
+	background-color: #000000d6;
 	position: absolute; 
 	top: 50px;
 	left: 5%;
@@ -24,6 +56,8 @@
 
 #searchCardInput{
 	width: 100%;
+	height: 21px;
+	margin-bottom: 7px;
 }
 
 #findCardClose{
@@ -32,7 +66,19 @@
 }
 
 #findCards {
-	clear: both;
+  clear: both;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
 }
 
 #findCards img {
@@ -70,5 +116,5 @@
 
 .sideCard{
 	width: 40px;
-	cursor: pointer;;
+	cursor: pointer;
 }
